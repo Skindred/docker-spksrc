@@ -1,5 +1,4 @@
-FROM tianon/debian:wheezy
-MAINTAINER Davy Leggieri <bydavy@gmail.com>
+FROM debian:7.3
 
 # Enable i386 multiarch
 RUN dpkg --add-architecture i386
@@ -14,4 +13,4 @@ RUN apt-get install -qy build-essential debootstrap python-pip automake libgmp3-
 RUN pip install -U pip
 
 # Volume pointing to spksrc sources
-VOLUME /root/spksrc
+VOLUME /spksrc
