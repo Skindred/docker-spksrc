@@ -16,9 +16,5 @@ RUN pip install -U pip
 RUN git clone https://github.com/SynoCommunity/spksrc.git /spksrc/
 RUN cd /spksrc/; make setup
 
-# Install all toolchains
-RUN cd /spksrc/toolchains/; for i in *; do cd $i; make; cd ..; done
-RUN rm -f /spksrc/distrib/gcc*.tgz
-
 # Volume pointing to spksrc sources
 VOLUME /spksrc
